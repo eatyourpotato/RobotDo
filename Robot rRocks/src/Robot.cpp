@@ -8,45 +8,94 @@
 #include "Robot.h"
 
 void Robot::avancer(int x, int y) {
-	etatCourant.avancer(x, y);
+	try{
+		etatCourant.avancer(x, y);
+		position.setX(x);
+		position.setY(y);
+	} catch(EtatRobot::NotPossible e)	{
+		cout << "operation non possible" << endl;
+	}
 }
 
 void Robot::tourner(string direction) {
-	etatCourant.tourner(direction);
+	try{
+		etatCourant.tourner(direction);
+		this->Direction = direction;
+	} catch(EtatRobot::NotPossible e)	{
+		cout << "operation non possible" << endl;
+	}
 }
 
 void Robot::saisir(Objet o) {
-	etatCourant.saisir(o);
+	try{
+		etatCourant.saisir(o);
+	} catch(EtatRobot::NotPossible e)	{
+		cout << "operation non possible" << endl;
+	}
 }
 
 void Robot::poser() {
-	etatCourant.poser();
+	try{
+		etatCourant.poser();
+	} catch(EtatRobot::NotPossible e)	{
+		cout << "operation non possible" << endl;
+	}
 }
 
 int Robot::peser() {
-	return etatCourant.peser();
+	try{
+		return etatCourant.peser();
+	} catch(EtatRobot::NotPossible e)	{
+		cout << "operation non possible" << endl;
+	}
+	return -1;
 }
 
 void Robot::rencontrerObstacle(Obstacle o) {
-	etatCourant.rencontrerObstacle(o);
+	try{
+		etatCourant.rencontrerObstacle(o);
+	} catch(EtatRobot::NotPossible e)	{
+		cout << "operation non possible" << endl;
+	}
 }
 
 int Robot::evaluerObstacle() {
-	return etatCourant.evaluerObstacle();
+	try{
+		return etatCourant.evaluerObstacle();
+	} catch(EtatRobot::NotPossible e)	{
+		cout << "operation non possible" << endl;
+	}
+		return -1;
 }
 
 void Robot::figer() {
-	etatCourant.figer();
+	try{
+		etatCourant.figer();
+	} catch(EtatRobot::NotPossible e)	{
+		cout << "operation non possible" << endl;
+	}
 }
 
 void Robot::repartir() {
-	etatCourant.repartir();
+	try{
+		etatCourant.repartir();
+	} catch(EtatRobot::NotPossible e)	{
+		cout << "operation non possible" << endl;
+	}
 }
 
 void Robot::afficher() {
-	etatCourant.afficher();
+	try{
+		etatCourant.afficher();
+	} catch(EtatRobot::NotPossible e)	{
+		cout << "operation non possible" << endl;
+	}
 }
 
 void Robot::changerEtat(EtatRobot e) {
-	etatCourant = e;
+	try{
+		etatCourant = e;
+	} catch(EtatRobot::NotPossible e)	{
+		cout << "operation non possible" << endl;
+	}
 }
