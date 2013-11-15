@@ -54,6 +54,7 @@ int Robot::peser() {
 void Robot::rencontrerObstacle(Obstacle o) {
 	try{
 		etatCourant.rencontrerObstacle(o);
+		this->obstacle = o;
 	} catch(EtatRobot::NotPossible e)	{
 		cout << "operation non possible" << endl;
 	}
