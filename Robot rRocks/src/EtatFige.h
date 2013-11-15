@@ -14,7 +14,7 @@ class EtatFige: public EtatRobot {
 private:
 	EtatEnRoute ancienEtat;
 public:
-	EtatFige(EtatEnRoute ancienEtat);
+	EtatFige(EtatEnRoute ancienEtat);//mémoriser l'ancien état avant de figer
 	void repartir();
 };
 
