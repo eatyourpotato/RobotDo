@@ -29,6 +29,8 @@ private:
 	Obstacle obstacle;
 
 public:
+	Robot();
+
 	void avancer(int x, int y);
 	void tourner(std::string direction);
 	void saisir(Objet o);

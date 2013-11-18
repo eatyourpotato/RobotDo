@@ -14,6 +14,5 @@ using namespace std;
 int main() {
 	Robot r;
 	r.avancer(2, 2);
-	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
 	return 0;
 }

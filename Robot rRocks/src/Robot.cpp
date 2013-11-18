@@ -6,6 +6,13 @@
  */
 
 #include "Robot.h"
+#include "EtatVide.h"
+
+Robot::Robot()	{
+	position = Position();
+	Direction = "S";
+	etatCourant = new EtatVide();
+}
 
 void Robot::avancer(int x, int y) {
 	try{
