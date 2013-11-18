@@ -7,12 +7,13 @@
 
 #include "EtatFige.h"
 
-EtatFige::EtatFige(EtatEnRoute ancienEtat) {
+EtatFige::EtatFige(EtatEnRoute* ancienEtat) {
 	this->ancienEtat = ancienEtat;
 }
 
 void EtatFige::repartir() {
-	robot.changerEtat(ancienEtat);
+	robot->changerEtat(ancienEtat);
 
-	cout << "Le robot se défige";
+	std::cout << "Le robot se défige";
 }
+

@@ -6,7 +6,9 @@
  */
 
 #include "EtatEnRoute.h"
+#include "EtatFige.h"
 
 void EtatEnRoute::figer() {
-	robot.changerEtat(EtatFige(*this));
+	EtatFige* etat = new EtatFige(this);
+	robot->changerEtat(etat);
 }

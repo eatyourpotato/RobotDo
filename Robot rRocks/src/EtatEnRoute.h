@@ -11,6 +11,7 @@
 #include "EtatRobot.h"
 
 class EtatEnRoute: public EtatRobot {
+public:
 	void figer();
 };
 

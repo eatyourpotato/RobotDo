@@ -9,7 +9,7 @@
 
 void Robot::avancer(int x, int y) {
 	try{
-		etatCourant.avancer(x, y);
+		etatCourant->avancer(x, y);
 		position.setX(x);
 		position.setY(y);
 	} catch(EtatRobot::NotPossible e)	{
@@ -19,7 +19,7 @@ void Robot::avancer(int x, int y) {
 
 void Robot::tourner(string direction) {
 	try{
-		etatCourant.tourner(direction);
+		etatCourant->tourner(direction);
 		this->Direction = direction;
 	} catch(EtatRobot::NotPossible e)	{
 		cout << "operation non possible" << endl;
@@ -28,7 +28,7 @@ void Robot::tourner(string direction) {
 
 void Robot::saisir(Objet o) {
 	try{
-		etatCourant.saisir(o);
+		etatCourant->saisir(o);
 	} catch(EtatRobot::NotPossible e)	{
 		cout << "operation non possible" << endl;
 	}
@@ -36,7 +36,7 @@ void Robot::saisir(Objet o) {
 
 void Robot::poser() {
 	try{
-		etatCourant.poser();
+		etatCourant->poser();
 	} catch(EtatRobot::NotPossible e)	{
 		cout << "operation non possible" << endl;
 	}
@@ -44,7 +44,7 @@ void Robot::poser() {
 
 int Robot::peser() {
 	try{
-		return etatCourant.peser();
+		return etatCourant->peser();
 	} catch(EtatRobot::NotPossible e)	{
 		cout << "operation non possible" << endl;
 	}
@@ -53,7 +53,7 @@ int Robot::peser() {
 
 void Robot::rencontrerObstacle(Obstacle o) {
 	try{
-		etatCourant.rencontrerObstacle(o);
+		etatCourant->rencontrerObstacle(o);
 		this->obstacle = o;
 	} catch(EtatRobot::NotPossible e)	{
 		cout << "operation non possible" << endl;
@@ -62,7 +62,7 @@ void Robot::rencontrerObstacle(Obstacle o) {
 
 int Robot::evaluerObstacle() {
 	try{
-		return etatCourant.evaluerObstacle();
+		return etatCourant->evaluerObstacle();
 	} catch(EtatRobot::NotPossible e)	{
 		cout << "operation non possible" << endl;
 	}
@@ -71,7 +71,7 @@ int Robot::evaluerObstacle() {
 
 void Robot::figer() {
 	try{
-		etatCourant.figer();
+		etatCourant->figer();
 	} catch(EtatRobot::NotPossible e)	{
 		cout << "operation non possible" << endl;
 	}
@@ -79,22 +79,19 @@ void Robot::figer() {
 
 void Robot::repartir() {
 	try{
-		etatCourant.repartir();
+		etatCourant->repartir();
 	} catch(EtatRobot::NotPossible e)	{
 		cout << "operation non possible" << endl;
 	}
 }
 
 void Robot::afficher() {
-	try{
-		etatCourant.afficher();
-	} catch(EtatRobot::NotPossible e)	{
-		cout << "operation non possible" << endl;
-	}
+
 }
 
-void Robot::changerEtat(EtatRobot e) {
+void Robot::changerEtat(EtatRobot* e) {
 	try{
+		delete etatCourant;
 		etatCourant = e;
 	} catch(EtatRobot::NotPossible e)	{
 		cout << "operation non possible" << endl;

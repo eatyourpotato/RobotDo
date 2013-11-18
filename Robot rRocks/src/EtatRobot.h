@@ -8,15 +8,19 @@
 #ifndef ETATROBOT_H_
 #define ETATROBOT_H_
 
-using namespace std;
+#include "Robot.h"
+#include "Objet.h"
+#include "Obstacle.h"
+
+class Robot; // Dire au compilo que SIIIIIIIIIIIIIIII cette classe existe bien
 
 class EtatRobot {
 protected:
-	Robot robot;
+	Robot* robot;
 
 public:
 	void avancer(int x, int y);
-	void tourner(string direction);
+	void tourner(std::string direction);
 	void saisir(Objet o);
 	void poser();
 	int peser();
@@ -25,6 +29,8 @@ public:
 	void figer();
 	void repartir();
 	void afficher();
+
+	void changerEtat();
 
 	class NotPossible{};
 };

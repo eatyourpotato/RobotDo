@@ -9,12 +9,14 @@
 #define ETATFIGE_H_
 
 #include "EtatRobot.h"
+#include "EtatEnRoute.h"
+#include <iostream>
 
 class EtatFige: public EtatRobot {
 private:
-	EtatEnRoute ancienEtat;
+	EtatEnRoute* ancienEtat;
 public:
-	EtatFige(EtatEnRoute ancienEtat);//mémoriser l'ancien état avant de figer
+	EtatFige(EtatEnRoute* ancienEtat); // Mémoriser l'ancien état pour le conserver
 	void repartir();
 };
 

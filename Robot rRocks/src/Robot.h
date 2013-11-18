@@ -8,19 +8,29 @@
 #ifndef ROBOT_H_
 #define ROBOT_H_
 
+#include <string>
+#include <iostream>
+
+#include "EtatRobot.h"
+#include "Position.h"
+#include "Objet.h"
+#include "Obstacle.h"
+
 using namespace std;
+
+class EtatRobot; // pour faire plaisir au compilo qui ne trouve pas EtatRobot
 
 class Robot {
 private:
-	string Direction;
-	EtatRobot etatCourant;
+	std::string Direction;
+	EtatRobot* etatCourant;
 	Position position;
 	Objet objet;
 	Obstacle obstacle;
 
 public:
 	void avancer(int x, int y);
-	void tourner(string direction);
+	void tourner(std::string direction);
 	void saisir(Objet o);
 	void poser();
 	int peser();
@@ -30,7 +40,7 @@ public:
 	void repartir();
 	void afficher();
 
-	void changerEtat(EtatRobot e);
+	void changerEtat(EtatRobot* e);
 };
 
 #endif /* ROBOT_H_ */
