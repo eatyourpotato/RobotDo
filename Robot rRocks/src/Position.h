@@ -1,8 +1,10 @@
-/*
- * Position.h
- *
- *  Created on: 14 nov. 2013
- */
+//============================================================================
+// Name        : Position.cpp
+// Author      : Jiachen Nie - Guillaume Lestel
+// Version     :
+// Copyright   : Your copyright notice
+//============================================================================
+
 
 #ifndef POSITION_H_
 #define POSITION_H_

@@ -1,9 +1,9 @@
-/*
- * EtatFige.h
- *
- *  Created on: 14 nov. 2013
- *      Author: eyp
- */
+//============================================================================
+// Name        : EtatFige.cpp
+// Author      : Jiachen Nie - Guillaume Lestel
+// Version     :
+// Copyright   : Your copyright notice
+//============================================================================
 
 #ifndef ETATFIGE_H_
 #define ETATFIGE_H_
@@ -17,7 +17,7 @@ private:
 	EtatEnRoute* ancienEtat;
 public:
 	EtatFige(EtatEnRoute* ancienEtat); // Mémoriser l'ancien état pour le conserver
-	void repartir();
+	void repartir(Robot* robot);
 };
 
 #endif /* ETATFIGE_H_ */

@@ -1,9 +1,9 @@
-/*
- * Robot.h
- *
- *  Created on: 14 nov. 2013
- *      Author: eyp
- */
+//============================================================================
+// Name        : Robot.cpp
+// Author      : Jiachen Nie - Guillaume Lestel
+// Version     :
+// Copyright   : Your copyright notice
+//============================================================================
 
 #ifndef ROBOT_H_
 #define ROBOT_H_
@@ -25,18 +25,18 @@ private:
 	std::string Direction;
 	EtatRobot* etatCourant;
 	Position position;
-	Objet objet;
-	Obstacle obstacle;
+	Objet* objet;
+	Obstacle* obstacle;
 
 public:
 	Robot();
 
 	void avancer(int x, int y);
 	void tourner(std::string direction);
-	void saisir(Objet o);
+	void saisir(Objet* o);
 	void poser();
 	int peser();
-	void rencontrerObstacle(Obstacle o);
+	void rencontrerObstacle(Obstacle* o);
 	int evaluerObstacle();
 	void figer();
 	void repartir();

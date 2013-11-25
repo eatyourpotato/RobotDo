@@ -1,14 +1,17 @@
-/*
- * Robot.cpp
- *
- *  Created on: 14 nov. 2013
- *      Author: eyp
- */
+//============================================================================
+// Name        : Robot.cpp
+// Author      : Jiachen Nie - Guillaume Lestel
+// Version     :
+// Copyright   : Your copyright notice
+//============================================================================
+
 
 #include "Robot.h"
 #include "EtatVide.h"
+#include  "EtatVideFaceObstacle.h"
 
 Robot::Robot()	{
+	obstacle = NULL;
 	position = Position();
 	Direction = "S";
 	etatCourant = new EtatVide();
@@ -33,7 +36,7 @@ void Robot::tourner(string direction) {
 	}
 }
 
-void Robot::saisir(Objet o) {
+void Robot::saisir(Objet* o) {
 	try{
 		etatCourant->saisir(o);
 	} catch(EtatRobot::NotPossible e)	{
@@ -51,16 +54,19 @@ void Robot::poser() {
 
 int Robot::peser() {
 	try{
-		return etatCourant->peser();
+		etatCourant->peser();
+		return objet->getPoids();
 	} catch(EtatRobot::NotPossible e)	{
 		cout << "operation non possible" << endl;
 	}
 	return -1;
 }
 
-void Robot::rencontrerObstacle(Obstacle o) {
+void Robot::rencontrerObstacle(Obstacle* o) {
 	try{
 		etatCourant->rencontrerObstacle(o);
+//		delete etatCourant;
+		etatCourant = new EtatVideFaceObstacle();
 		this->obstacle = o;
 	} catch(EtatRobot::NotPossible e)	{
 		cout << "operation non possible" << endl;
@@ -69,16 +75,17 @@ void Robot::rencontrerObstacle(Obstacle o) {
 
 int Robot::evaluerObstacle() {
 	try{
-		return etatCourant->evaluerObstacle();
+		etatCourant->evaluerObstacle();
+		return obstacle->getHauteur();
 	} catch(EtatRobot::NotPossible e)	{
 		cout << "operation non possible" << endl;
-	}
 		return -1;
+	}
 }
 
 void Robot::figer() {
 	try{
-		etatCourant->figer();
+		etatCourant->figer(this);
 	} catch(EtatRobot::NotPossible e)	{
 		cout << "operation non possible" << endl;
 	}
@@ -86,20 +93,24 @@ void Robot::figer() {
 
 void Robot::repartir() {
 	try{
-		etatCourant->repartir();
+		etatCourant->repartir(this);
 	} catch(EtatRobot::NotPossible e)	{
 		cout << "operation non possible" << endl;
 	}
 }
 
 void Robot::afficher() {
+	if (etatCourant == NULL)	{
+		cout << "test wrong" << endl;
+	}
 
 }
 
 void Robot::changerEtat(EtatRobot* e) {
 	try{
-		delete etatCourant;
-		etatCourant = e;
+		cout << "le robot change d'état" << endl;
+		afficher();
+		this->etatCourant = e;
 	} catch(EtatRobot::NotPossible e)	{
 		cout << "operation non possible" << endl;
 	}

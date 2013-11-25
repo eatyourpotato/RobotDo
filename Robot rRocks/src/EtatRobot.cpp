@@ -1,9 +1,9 @@
-/*
- * EtatRobot.cpp
- *
- *  Created on: 14 nov. 2013
- *      Author: eyp
- */
+//============================================================================
+// Name        : EtatRobot.cpp
+// Author      : Jiachen Nie - Guillaume Lestel
+// Version     :
+// Copyright   : Your copyright notice
+//============================================================================
 
 #include "EtatRobot.h"
 
@@ -15,7 +15,7 @@ void EtatRobot::tourner(string direction) {
 	throw NotPossible();
 }
 
-void EtatRobot::saisir(Objet o) {
+void EtatRobot::saisir(Objet* o) {
 	throw NotPossible();
 }
 
@@ -23,25 +23,23 @@ void EtatRobot::poser() {
 	throw NotPossible();
 }
 
-int EtatRobot::peser() {
-	throw NotPossible();
-	return -1;
-}
-
-void EtatRobot::rencontrerObstacle(Obstacle o) {
+void EtatRobot::peser() {
 	throw NotPossible();
 }
 
-int EtatRobot::evaluerObstacle() {
-	throw NotPossible();
-	return -1;
-}
-
-void EtatRobot::figer() {
+void EtatRobot::rencontrerObstacle(Obstacle* o) {
 	throw NotPossible();
 }
 
-void EtatRobot::repartir() {
+void EtatRobot::evaluerObstacle() {
+	throw NotPossible();
+}
+
+void EtatRobot::figer(Robot* robot) {
+	throw NotPossible();
+}
+
+void EtatRobot::repartir(Robot* robot) {
 	throw NotPossible();
 }
 

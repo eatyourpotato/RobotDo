@@ -1,11 +1,9 @@
-/*
- * Obstacle.h
- *
- *  Created on: 14 nov. 2013
- *      Author: eyp
- *
- *      efsfesf
- */
+//============================================================================
+// Name        : Obstacle.cpp
+// Author      : Jiachen Nie - Guillaume Lestel
+// Version     :
+// Copyright   : Your copyright notice
+//============================================================================
 
 #ifndef OBSTACLE_H_
 #define OBSTACLE_H_
@@ -14,6 +12,7 @@ class Obstacle {
 private:
 	int hauteur;
 public:
+	Obstacle(int hauteur);
 	int getHauteur() const {
 		return hauteur;
 	}

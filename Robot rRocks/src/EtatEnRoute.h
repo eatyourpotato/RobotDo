@@ -1,9 +1,9 @@
-/*
- * EtatEnRoute.h
- *
- *  Created on: 14 nov. 2013
- *      Author: eyp
- */
+//============================================================================
+// Name        : EtatEnRoute.cpp
+// Author      : Jiachen Nie - Guillaume Lestel
+// Version     :
+// Copyright   : Your copyright notice
+//============================================================================
 
 #ifndef ETATENROUTE_H_
 #define ETATENROUTE_H_
@@ -12,7 +12,7 @@
 
 class EtatEnRoute: public EtatRobot {
 public:
-	void figer();
+	void figer(Robot* robot);
 };
 
 #endif /* ETATENROUTE_H_ */

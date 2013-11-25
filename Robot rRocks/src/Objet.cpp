@@ -1,9 +1,10 @@
-/*
- * Objet.cpp
- *
- *  Created on: 14 nov. 2013
- *      Author: eyp
- */
+//============================================================================
+// Name        : Objet.cpp
+// Author      : Jiachen Nie - Guillaume Lestel
+// Version     :
+// Copyright   : Your copyright notice
+//============================================================================
+
 
 #include "Objet.h"
 
