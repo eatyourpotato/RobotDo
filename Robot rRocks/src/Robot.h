@@ -15,14 +15,15 @@
 #include "Position.h"
 #include "Objet.h"
 #include "Obstacle.h"
+#include "ElementARepresenter.h"
 
 using namespace std;
 
 class EtatRobot; // pour faire plaisir au compilo qui ne trouve pas EtatRobot
 
-class Robot {
+class Robot : public ElementARepresenter{
 private:
-	std::string Direction;
+	string Direction;
 	EtatRobot* etatCourant;
 	Position position;
 	Objet* objet;
@@ -43,6 +44,27 @@ public:
 	void afficher();
 
 	void changerEtat(EtatRobot* e);
+/////////////////////////////////////////////////
+	string getDirection(){
+		return Direction;
+	}
+
+	EtatRobot* getEtatCourant(){
+		return etatCourant;
+	}
+
+	Position getPosition(){
+		return position;
+	}
+
+	Objet* getObjet(){
+		return objet;
+	}
+
+	Obstacle* getObstacle(){
+		return obstacle;
+	}
+//////////////////////////////////////////////////:
 };
 
 #endif /* ROBOT_H_ */
